@@ -27,8 +27,14 @@ func Run(addr string, router map[string]map[string]string, quit chan bool) (err 
 
 	go http.Serve(ln, Server(router))
 	go func() {
-		<-quit
-		ln.Close()
+		for {
+			select {
+			case <-quit:
+				ln.Close()
+				return
+			default:
+			}
+		}
 	}()
 
 	return
