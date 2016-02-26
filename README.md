@@ -1,12 +1,12 @@
 # mock api (by golang)
 
-# Install
+### Install
 
 ```
 go get github.com/colin1124x/go-mock-api
 ```
 
-# Usage
+### Usage
 
 ```go
 // create api map
