@@ -17,7 +17,10 @@ func TestRun(t *testing.T) {
 	q := make(chan bool)
 	defer func() { q <- true }()
 
-	e := Run(":8000", r, q)
+	s := New()
+	s.Map(r)
+
+	e := s.Run(":8000", r, q)
 	if e != nil {
 		t.Error(e)
 		t.Fail()
