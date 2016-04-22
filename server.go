@@ -8,7 +8,7 @@ import (
 
 type Server struct {
 	routerMap  map[string]map[string]string
-	routerFunc func(http.ResponseWriter, *http.Request)
+	RouterFunc func(http.ResponseWriter, *http.Request)
 }
 
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
@@ -20,8 +20,8 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	if s.routerFunc != nil {
-		s.routerFunc(w, r)
+	if s.RouterFunc != nil {
+		s.RouterFunc(w, r)
 		return
 	}
 
