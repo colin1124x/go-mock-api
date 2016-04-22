@@ -53,7 +53,7 @@ func (s *Server) Map(m map[string]map[string]string) {
 	}
 }
 
-func (s *Server) Run(addr string, router map[string]map[string]string, quit chan bool) (err error) {
+func (s *Server) Run(addr string, quit chan bool) (err error) {
 	ln, err := net.Listen("tcp", addr)
 	if err != nil {
 		return

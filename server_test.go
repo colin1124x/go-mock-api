@@ -22,7 +22,7 @@ func TestRun(t *testing.T) {
 	s := New()
 	s.Map(r)
 
-	e := s.Run(":8000", r, q)
+	e := s.Run(":8000", q)
 	if e != nil {
 		t.Error(e)
 		t.Fail()
